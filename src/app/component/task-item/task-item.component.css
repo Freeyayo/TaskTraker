@@ -2,3 +2,7 @@
     border: 1px solid black;
     margin: 3px;
 }
+
+.task-item-reminder-highlight {
+    border-left: 3px solid red
+}

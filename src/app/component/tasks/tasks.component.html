@@ -1,5 +1,5 @@
 <app-task-item
   *ngFor="let task of tasks"
   [task]="task"
-  (deleteBtnEvent)="handleDelete()"
+  (deleteBtnEvent)="handleDelete(task)"
 ></app-task-item>

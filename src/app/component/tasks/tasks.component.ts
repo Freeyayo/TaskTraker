@@ -20,7 +20,11 @@ export class TasksComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  handleDelete() {
-    console.log('got it');
+  handleDelete(task: Task) {
+    this.taskService
+      .deleteTask(task)
+      .subscribe(
+        () => (this.tasks = this.tasks.filter((t) => t.id !== task.id))
+      );
   }
 }

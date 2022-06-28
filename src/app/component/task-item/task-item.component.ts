@@ -9,6 +9,7 @@ import { Task } from 'src/app/TASK';
 export class TaskItemComponent implements OnInit {
   @Input() task: Task | undefined;
   @Output() deleteBtnEvent: EventEmitter<Task> = new EventEmitter();
+  @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter();
 
   deleteButtonTitle: string = 'delete';
 
@@ -19,5 +20,11 @@ export class TaskItemComponent implements OnInit {
   deleteBtnClick() {
     console.log('emit deleteBtnEvent');
     this.deleteBtnEvent.emit();
+  }
+
+  onToggle(task: Task | undefined) {
+    if (task) {
+      this.onToggleReminder.emit(task);
+    }
   }
 }

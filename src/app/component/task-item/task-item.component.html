@@ -1,6 +1,7 @@
 <div
   class="task-item-container"
   [ngClass]="{ 'task-item-reminder-highlight': task?.reminder }"
+  (dblclick)="onToggle(task)"
 >
   <h3>{{ task?.text || undefined }}</h3>
   <p>{{ task?.day || undefined }}</p>

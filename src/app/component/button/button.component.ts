@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Task } from 'src/app/TASK';
 
 @Component({
   selector: 'app-button',
@@ -6,13 +7,15 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./button.component.css'],
 })
 export class ButtonComponent implements OnInit {
-  @Output() btnClick = new EventEmitter();
+  @Output() btnClick: EventEmitter<Task> = new EventEmitter();
+  @Input() title: string = '';
 
   constructor() {}
 
   ngOnInit(): void {}
 
   onClick() {
+    console.log('emit btnClick');
     this.btnClick.emit();
   }
 }

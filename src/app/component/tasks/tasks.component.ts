@@ -19,4 +19,8 @@ export class TasksComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  handleDelete() {
+    console.log('got it');
+  }
 }

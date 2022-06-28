@@ -1,4 +1,11 @@
 <div class="task-item-container">
   <h3>{{ task?.text || undefined }}</h3>
   <p>{{ task?.day || undefined }}</p>
+
+  <div class="delete-container">
+    <app-button
+      [title]="deleteButtonTitle"
+      (btnClick)="deleteBtnClick()"
+    ></app-button>
+  </div>
 </div>
